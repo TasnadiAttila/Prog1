@@ -60,7 +60,7 @@ int main()
 
     
 	while(win.wait_for_button()){
-        
+        //Irányvektoros dolog, hogy az egyik végéből kivonjuk 
         int dx = rand()%8*100-valueX;
         int dy = rand()%8*100-valueY;
         valueX+=dx;
