@@ -9,13 +9,14 @@
 int main()
 {
     using namespace Graph_lib;
-
+    //Rajzábla
     int xmax = 1000;
     int ymax = 800;
 
     
 	Simple_window win {Point{100,100},xmax,ymax,"Canvas"};
 
+    //Négyzetek felrajzolása
     int x_grid = 100;
     int y_grid = 100;
 
@@ -27,14 +28,16 @@ int main()
         grid.add(Point{0,y},Point{800,y});
     }
 
+    //Szinezés
     Vector_ref<Rectangle> rect;
     for(int i=0;i<8;++i){
             rect.push_back(new Rectangle{Point{i*100,i*100},100,100});
             rect[rect.size()-1].set_fill_color(Color::red);
+            rect[rect.size()-1].set_color(Color::invisible);
             win.attach(rect[rect.size()-1]);
     }
-    int x=0;
-    int y=0;
+    
+    //Képek rajzolása
     Image rita {Point{200,0},"kepes.jpg"};
     Image grita {Point{400,0},"kepes.jpg"};
     Image frita {Point{600,0},"kepes.jpg"};
@@ -42,8 +45,32 @@ int main()
     win.attach(grita);
     win.attach(frita);
 
+    int valueX = 0;
+    int valueY = 0;
+    //makes use of the computer's internal clock to control the choice of the seed. 
+    //Since time is continually changing, the seed is forever changing.
+
+    srand(time(NULL));
+    valueY = rand()%8*100;
+    valueX = rand()%8*100;
+
+    Image tp {Point{valueX,valueY},"tp.jpg"};
+    win.attach(tp);
     win.attach(grid);
-	win.wait_for_button();
+
+    
+	while(win.wait_for_button()){
+        
+        int dx = rand()%8*100-valueX;
+        int dy = rand()%8*100-valueY;
+        valueX+=dx;
+        valueY+=dy;
+
+        tp.move(dx,dy);
+    }
+
+
+    
 
 
     
