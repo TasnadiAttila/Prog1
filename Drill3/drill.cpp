@@ -14,6 +14,9 @@ class D1 : public B1{
         void vf() {
             cout << "D1::vf()" << endl;
         };
+        void f(){
+          cout << "D1::f()" << endl;
+        }
 };
 int main(){
     B1 b_object;
@@ -22,6 +25,7 @@ int main(){
 
     D1 d_object;
     d_object.vf();
+    d_object.f();
     
     B1& b_ref_obj = d_object;
     b_ref_obj.vf();
