@@ -1,5 +1,8 @@
 #include "Simple_window.h"
 #include "Graph.h"
+//1,4
+double one(double x) { return 1;};
+double slope(double x) {return x/2;};
 
 int main(){
     using namespace Graph_lib;
@@ -22,12 +25,23 @@ int main(){
     x.set_color(Color::red);
     y.set_color(Color::red);
     
+    //Separate shape
+    //1-2
+    int n_points = 400;
+    int r_min=-10, r_max=11;
+    Function f{one,r_min,r_max,origo,n_points,xscale,yscale};
+
+    //5
+    Function slopy{slope,r_min,r_max,origo,n_points,xscale,yscale};
+    Text text_for_slopy{Point{100,385},"x/2"};
+
 
 
     win.attach(x);
     win.attach(y);
-
-
+    win.attach(f);
+    win.attach(slopy);
+    win.attach(text_for_slopy);
 
 
 
