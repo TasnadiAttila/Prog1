@@ -4,6 +4,7 @@
 double one(double x) { return 1;};
 double slope(double x) {return x/2;};
 double square(double x) {return x*x;};
+double sloping_cos(double x) {return cos(x) + slope(x);};
 
 int main(){
     using namespace Graph_lib;
@@ -34,18 +35,25 @@ int main(){
 
     //5
     Function slopy{slope,r_min,r_max,origo,n_points,xscale,yscale};
-    Text text_for_slopy{Point{100,385},"x/2"};
+    Text text_for_slopy{Point{slopy.point(0).x,slopy.point(0).y - 20},"x/2"};
+    //6
+    Function parabola(square,r_min,r_max,origo,n_points,xscale,yscale);
     //7
-    Function cosF{cos,r_min,r_max,n_points,xscale,yscale};
-    
+    Function cosine{cos,r_min,r_max,origo,n_points,xscale,yscale};    
+    //8
+    cosine.set_color(Color::blue);
+    //9
+    Function sloping_cosine{sloping_cos,r_min,r_max,origo,n_points,xscale,yscale};
+
 
     win.attach(x);
     win.attach(y);
     win.attach(f);
     win.attach(slopy);
     win.attach(text_for_slopy);
-    win.attach(cosinus);
-
+    win.attach(parabola);
+    win.attach(cosine);
+    win.attach(sloping_cosine);
 
     win.wait_for_button();
 

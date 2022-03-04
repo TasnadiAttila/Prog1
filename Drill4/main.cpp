@@ -1,5 +1,6 @@
 /*
     g++ main.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o main `fltk-config --ldflags --use-images` -std=c++11
+	g++ drill.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o drill `fltk-config --ldflags --use-images` -std=c++11 && ./drill
 */
 #include "Simple_window.h"
 #include "Graph.h"
