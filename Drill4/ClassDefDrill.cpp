@@ -79,8 +79,8 @@ int main(){
 
     
     Person person2;
-    int szamol = 0;
     cout << "Hany ember: ";
+    int szamol = 0;
     cin >> szamol;
     int szamol2 = 0;
     vector<Person> emberek;
