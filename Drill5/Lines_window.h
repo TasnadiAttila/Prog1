@@ -11,9 +11,9 @@ struct Lines_window : Graph_lib::Window {
 	static void cb_blue(Address,Address);
     static void cb_black(Address,Address);
 
-    void red_pressed(){change(Color::red);}
-    void blue_pressed(){change(Color::blue);}
-    void black_pressed(){change(Color::black);}
+    void red_pressed(){change(Color::red);redraw();}
+    void blue_pressed(){change(Color::blue);redraw();}
+    void black_pressed(){change(Color::black);redraw();}
 
     void change(Color c){lines.set_color(c);}
 
