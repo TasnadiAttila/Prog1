@@ -1,5 +1,5 @@
 /*
-    g++ lines_main.cpp Graph.cpp Window.cpp GUI.cpp Lines_window.cpp -o lines_main `fltk-config --ldflags --use-images` -std=c++11
+    g++ lines_main.cpp Graph.cpp Window.cpp GUI.cpp Lines_window.cpp -o DRILL `fltk-config --ldflags --use-images` -std=c++11 && ./DRILL
 */
 #include "Lines_window.h"
 #include "Graph.h"
