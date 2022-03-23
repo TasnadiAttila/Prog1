@@ -19,15 +19,13 @@ int main()
         MyVector2[i] = MyVector2[i]+3;
     }
 
-    //copy list to list and increase value by 5
+    //copy list to list and increase value by 5 - vizsgan iteratoros - felette az
     list<int> MyList2 = MyList;
     for(auto &i : MyList2){
          i=i+5;
     }
-     for(auto const& i : MyList2){
-        cout << i << endl;
-    }
-    
+ 
+
 /*
     for(int i = 0; i < 10;++i){
         cout << MyArray2[i] << endl;
