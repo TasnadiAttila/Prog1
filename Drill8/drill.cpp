@@ -60,7 +60,10 @@ int main(){
     int random = rand()%hatar;
 
     vector<Item>:: iterator it;
-    it = vi[random];
+    //it = vi.begin() + random;
+    //vagy
+    //it = find(vi.begin(),vi.end(),vi[random]);
+    
 
     cout << vi;
     sort(vi.begin(),vi.end(),Cmp_by_name());
