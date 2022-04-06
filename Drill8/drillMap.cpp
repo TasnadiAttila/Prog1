@@ -1,39 +1,6 @@
 #include "../std_lib_facilities.h"
 
-//
-// Comparator function to sort pairs
-// according to second value
-bool cmp(pair<string, int>& a,
-         pair<string, int>& b)
-{
-    return a.second < b.second;
-}
-  
-// Function to sort the map according
-// to value in a (key-value) pairs
-void sort(map<string, int>& M)
-{
-  
-    // Declare vector of pairs
-    vector<pair<string, int> > A;
-  
-    // Copy key-value pair from Map
-    // to vector of pairs
-    for (auto& it : M) {
-        A.push_back(it);
-    }
-  
-    // Sort using comparator function
-    sort(A.begin(), A.end(), cmp);
-  
-    // Print the sorted value
-    for (auto& it : A) {
-  
-        cout << it.first << ' '
-             << it.second << endl;
-    }
-}
-//
+
 
 //function to read
 void READ(map<string,int>& MyMap){
@@ -42,11 +9,19 @@ void READ(map<string,int>& MyMap){
     cin >> s >> i;
     MyMap.insert(pair<string,int>(s,i));
 }
-ostream& operator<<(ostream& output, const map<string,int>& MyMap){
+
+template <typename key,typename value>
+ostream& operator<<(ostream& output, const map<key,value>& MyMap){
     for (const auto& p : MyMap)
         cout << p.first << ": " << p.second << '\n';
 
     return output;
+}
+template <typename key,typename value>
+void swapper(map<key,value>& MyMap, map<value,key>& MyMap2){
+    for(auto p:MyMap){
+        MyMap2[p.second] = p.first;
+    }
 }
 
 int main(){
@@ -65,7 +40,7 @@ int main(){
     };
    
         
-    sort(msi);
+    cout << msi;
     cout << endl;
     /* így is végig lehet rajta menni
     for (const auto& p : msi)
@@ -98,5 +73,8 @@ int main(){
     cout << sum << endl;
 
     //9.next
+    map<int,string> mis;
+    swapper(msi,mis);
+    cout << mis;
 
 }
