@@ -35,7 +35,7 @@ int main(){
     for(int i = 0;i<vd.size();++i){
         cout << vd[i] << " - " << vi[i] << endl;
     }
-
+    //nemjo
     double mean = osszeg/vd.size();
     vector<double> vd2;
     for(int i = 0;i<vd.size();++i){
