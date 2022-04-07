@@ -15,7 +15,7 @@ void SQUAREROOT(){
         cout << "no square root" << endl;
     } 
     else{
-        cout << sqrt(val) << endl;
+        cout << val << " - " << sqrt(val) << endl;
     }
 }
 
@@ -52,6 +52,13 @@ int main(){
     cout << "Elements in c: " << c.size() << endl;
     cout << "Elements in d: " << d.size() << endl;//10*10
     cout << "Elements in e: " << e.size() << endl;//10*10*10
+
+    //4
+    cout << endl;
+    cout << "Enter values to check ther root: " << endl;
+    for(int i = 0;i<4;++i){
+        SQUAREROOT();
+    }
 
     //5
     cout << endl;
