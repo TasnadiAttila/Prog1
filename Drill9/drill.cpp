@@ -19,6 +19,29 @@ void SQUAREROOT(){
     }
 }
 
+void out(const Matrix<double,2>& m){
+
+    string cell = to_string(m.dim2()*m.dim1()*10);
+    for(int i = 0; i < m.dim1();i++){
+        cout << "{";
+        for(int j = 0; j < m.dim2();j++){
+            cout << setw(cell.size()) << m(i,j);
+        }
+        cout << " }"<< endl;
+    }
+
+}
+
+complex<double> sum(const Matrix<complex<double>> &mat){
+    complex<double> sum = 0;
+    for(int i = 0; i<mat.dim1();++i){
+        sum+=mat(i);
+
+    }
+    return sum;
+}
+
+
 int main(){
     
     //1
@@ -79,24 +102,25 @@ int main(){
     cout << "Dimensons: " << endl;
     cin >> m >> n;
     Matrix<double,2> six(m,n);
-    for(int i = 0;i<six.dim1();++i){
-        for(int j = 0;j<six.dim2();++j){
-            cout << six(i,j) << " ";
+    for(int i = 0; i < six.dim1();i++){
+        for(int j = 0; j < six.dim2();j++){
+            six(i,j) = i*j;
         }
     }
+    out(six);
     
     //7
+    
     cout << endl;
-    cout << "Enter 10 doubles to get their sum: " << endl;
+    cout << "Enter 10 complex doubles to get their sum: " << endl;
     Matrix<complex<double>> seven (10);
-    double temp;
-    double sum;
+
     for(int i = 0;i<seven.size();++i){
-        cin >> temp;
-        seven[i] = temp;
-        sum += temp;
+        cin >> seven[i];
     }
-    cout << "Sum of values: " << sum << endl;
+    cout << seven << endl;
+    cout << sum(seven) << endl;
+
     //8
     cout << endl;
     cout << "Enter six values: " << endl;
