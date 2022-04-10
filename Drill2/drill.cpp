@@ -47,10 +47,7 @@ int main()
 
     int valueX = 0;
     int valueY = 0;
-    //makes use of the computer's internal clock to control the choice of the seed. 
-    //Since time is continually changing, the seed is forever changing.
-
-    srand(time(NULL));
+  
     valueY = rand()%8*100;
     valueX = rand()%8*100;
 
